@@ -55,7 +55,7 @@
           name="temperature"
           @input="addTemp"
           :value="temp.name"
-          :checked="temp.name === potency"
+          :checked="temp.name === temperature"
         >
         <span>{{ temp.type }}</span>
       </label>
@@ -76,7 +76,7 @@ export default {
       milkiness: '',
       sugariness: '',
       potency: '',
-      temp: '',
+      temperature: '',
       tempOptions: [
         {
           type: 'Cold',
@@ -148,8 +148,8 @@ export default {
       this.$emit('strength-selected', this.potency)
     },
     addTemp (ev) {
-      this.temp = ev.target.value
-      this.$emit('temp-selected', this.temp)
+      this.temperature = ev.target.value
+      this.$emit('temp-selected', this.temperature)
     }
   },
   created () {
