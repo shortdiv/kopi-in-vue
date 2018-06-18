@@ -1,5 +1,5 @@
 <template>
-  <h1>kopi {{ milk }} {{ potency }} {{ sugar }}  {{ temp }}</h1>
+  <h1>{{ drinkOrder }}</h1>
 </template>
 
 <script>
@@ -21,6 +21,11 @@ export default {
     temp: {
       type: String,
       default: null
+    }
+  },
+  computed: {
+    drinkOrder () {
+      return `kopi ${this.milk} ${this.potency} ${this.sugar} ${this.temp}`
     }
   }
 }
