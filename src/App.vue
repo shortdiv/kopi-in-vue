@@ -2,9 +2,11 @@
   <div id="app">
     <KopiOptions
       @milk-selected="setMilk"
+      @sugar-selected="setSugar"
     />
     <KopiOrder
       :milk="milk"
+      :sugar="sugar"
     />
   </div>
 </template>
@@ -21,12 +23,16 @@ export default {
   },
   data () {
     return {
-      milk: ''
+      milk: '',
+      sugar: ''
     }
   },
   methods: {
     setMilk (val) {
       this.milk = val
+    },
+    setSugar (val) {
+      this.sugar = val
     }
   }
 }
