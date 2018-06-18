@@ -5,7 +5,13 @@
         v-for="(milkType,index) in milkTypes"
         :key="index"
       >
-        <input type="radio" name="milk">
+        <input
+          type="radio"
+          name="milk"
+          @input="ev => { milkiness = ev.target.value }"
+          :value="milkType"
+          :checked="milkType === milkiness"
+        >
         <span>{{ milkType }}</span>
       </label>
     </li>
@@ -17,6 +23,7 @@ export default {
   name: 'KopiOptions',
   data () {
     return {
+      milkiness: 'condensed milk',
       milkTypes: [
         'no milk',
         'condensed milk',
