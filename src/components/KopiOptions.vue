@@ -21,6 +21,11 @@
 <script>
 export default {
   name: 'KopiOptions',
+  watch: {
+    milkiness (newVal) {
+      console.log(newVal)
+    }
+  },
   data () {
     return {
       milkiness: 'condensed milk',
