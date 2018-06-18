@@ -9,10 +9,10 @@
           type="radio"
           name="milk"
           @input="addMilk"
-          :value="milkType"
-          :checked="milkType === milkiness"
+          :value="milkType.name"
+          :checked="milkType.name === milkiness"
         >
-        <span>{{ milkType }}</span>
+        <span>{{ milkType.type }}</span>
       </label>
     </li>
   </ul>
@@ -28,11 +28,11 @@ export default {
   },
   data () {
     return {
-      milkiness: 'condensed milk',
+      milkiness: '',
       milkTypes: [
-        'no milk',
-        'condensed milk',
-        'evaporated milk'
+        { type: 'no milk', name: 'o' },
+        { type: 'condensed milk', name: '' },
+        { type: 'evaporated milk', name: 'c' }
       ]
     }
   },

@@ -1,5 +1,5 @@
 <template>
-  <h1>{{ milk }}</h1>
+  <h1>kopi {{ milk }}</h1>
 </template>
 
 <script>
