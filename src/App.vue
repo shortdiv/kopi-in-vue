@@ -3,10 +3,14 @@
     <KopiOptions
       @milk-selected="setMilk"
       @sugar-selected="setSugar"
+      @strength-selected="setStrength"
+      @temp-selected="setTemp"
     />
     <KopiOrder
       :milk="milk"
       :sugar="sugar"
+      :potency="potency"
+      :temp="temp"
     />
   </div>
 </template>
@@ -24,7 +28,9 @@ export default {
   data () {
     return {
       milk: '',
-      sugar: ''
+      sugar: '',
+      potency: '',
+      temp: ''
     }
   },
   methods: {
@@ -33,6 +39,12 @@ export default {
     },
     setSugar (val) {
       this.sugar = val
+    },
+    setStrength (val) {
+      this.potency = val
+    },
+    setTemp (val) {
+      this.temp = val
     }
   }
 }

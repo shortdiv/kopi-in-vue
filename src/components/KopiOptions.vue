@@ -30,6 +30,36 @@
         <span>{{ sugar.type }}</span>
       </label>
     </li>
+    <li class="strength-options">
+      <label
+        v-for="(strength, index) in strengthOptions"
+        :key="index"
+      >
+        <input
+          type="radio"
+          name="strength"
+          @input="addStrength"
+          :value="strength.name"
+          :checked="strength.name === potency"
+        >
+        <span>{{ strength.type }}</span>
+      </label>
+    </li>
+    <li class="temp-options">
+      <label
+        v-for="(temp, index) in tempOptions"
+        :key="index"
+      >
+        <input
+          type="radio"
+          name="temperature"
+          @input="addTemp"
+          :value="temp.name"
+          :checked="temp.name === potency"
+        >
+        <span>{{ temp.type }}</span>
+      </label>
+    </li>
   </ul>
 </template>
 
@@ -45,6 +75,40 @@ export default {
     return {
       milkiness: '',
       sugariness: '',
+      potency: '',
+      temp: '',
+      tempOptions: [
+        {
+          type: 'Cold',
+          name: 'peng'
+        },
+        {
+          type: 'Lukewarm',
+          name: 'pua sio'
+        },
+        {
+          type: 'Warm',
+          name: ''
+        }
+      ],
+      strengthOptions: [
+        {
+          type: 'weak',
+          name: 'po'
+        },
+        {
+          type: 'normal',
+          name: ''
+        },
+        {
+          type: 'strong',
+          name: 'gau'
+        },
+        {
+          type: 'stronger',
+          name: 'di lo'
+        }
+      ],
       sugarOptions: [
         {
           type: 'No Sugar',
@@ -78,6 +142,14 @@ export default {
     addSugar (ev) {
       this.sugariness = ev.target.value
       this.$emit('sugar-selected', this.sugariness)
+    },
+    addStrength (ev) {
+      this.potency = ev.target.value
+      this.$emit('strength-selected', this.potency)
+    },
+    addTemp (ev) {
+      this.temp = ev.target.value
+      this.$emit('temp-selected', this.temp)
     }
   },
   created () {
