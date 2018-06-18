@@ -41,6 +41,9 @@ export default {
       this.milkiness = ev.target.value
       this.$emit('milk-selected', this.milkiness)
     }
+  },
+  created () {
+    this.$emit('milk-selected', this.milkiness)
   }
 }
 </script>
