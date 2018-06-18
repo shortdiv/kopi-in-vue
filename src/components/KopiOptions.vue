@@ -8,7 +8,7 @@
         <input
           type="radio"
           name="milk"
-          @input="ev => { milkiness = ev.target.value }"
+          @input="addMilk"
           :value="milkType"
           :checked="milkType === milkiness"
         >
@@ -34,6 +34,12 @@ export default {
         'condensed milk',
         'evaporated milk'
       ]
+    }
+  },
+  methods: {
+    addMilk (ev) {
+      this.milkiness = ev.target.value
+      this.$emit('milk-selected', this.milkiness)
     }
   }
 }

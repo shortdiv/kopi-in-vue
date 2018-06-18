@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <KopiOptions />
+    <KopiOptions
+      @milk-selected="setMilk"
+    />
     <KopiOrder
       :milk="milk"
     />
@@ -16,6 +18,16 @@ export default {
   components: {
     KopiOptions,
     KopiOrder
+  },
+  data () {
+    return {
+      milk: ''
+    }
+  },
+  methods: {
+    setMilk (val) {
+      this.milk = val
+    }
   }
 }
 </script>
